@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\UsPrivacyAssessments;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UsPrivacyAssessmentsServiceProvider extends PackageServiceProvider
+class UsPrivacyAssessmentsServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-us-privacy-assessments';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-us-privacy-assessments')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
